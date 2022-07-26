@@ -1,3 +1,4 @@
+from django.template import loader
 from urllib import request
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -35,6 +36,18 @@ def actividades(request):
 
     return render(request,"actividades.html")
     
+
+def listadoactividades(request):
+
+    lista = Actividades.objects.all()
+
+    dic = {"activ":lista}
+
+    plantilla = loader.get_template("listadoactividades.html")
+
+    documento = plantilla.render(dic)
+
+    return HttpResponse(documento)
 
 
 

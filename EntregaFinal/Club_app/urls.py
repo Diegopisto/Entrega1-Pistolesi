@@ -1,6 +1,6 @@
 from django.urls import path
 
-from Club_app.views import actividades, alumnos, buscandoprofe, busquedaprofesor, inicio, profesores 
+from Club_app.views import actividades, alumnos, buscandoprofe, busquedaprofesor, inicio, listadoactividades, profesores 
 
 urlpatterns = [
     path("", inicio),
@@ -9,4 +9,5 @@ urlpatterns = [
     path("buscandoprofe/", buscandoprofe, name="buscandoprofe"),
     path("actividades/", actividades, name="actividades"),
     path("alumnos/", alumnos, name="alumnos"),
+    path("listaactividades/", listadoactividades, name="listaactividades"),
 ]
