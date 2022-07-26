@@ -1,0 +1,19 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoquecambia %}
+
+    <h1>Actividades</h1>
+
+    <form action="{% url 'actividades' %}" method="POST">{% csrf_token %}
+
+        <p>Actividad: <input type="text" name="actividad"></p>
+
+         <p>Turno: <input type="text" name="turno"></p>
+
+        <input type="submit" value="Registrar">
+
+    </form>
+
+{% endblock %}

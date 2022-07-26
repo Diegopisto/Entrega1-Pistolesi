@@ -1,0 +1,24 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenidoquecambia %}
+
+<p>Busqueda de profesores que dictan clases de: {{actividad}}</p>
+
+{% if profesores %}
+    <ul>
+        {% for X in profesores %}
+            <li>
+                {{X.nombre}}-{{X.actividad}}-{{X.turno}}
+            </li>
+        {% endfor %}
+
+    </ul>
+
+{% else %}
+    <p>No hubo coincidencias!</p>
+
+{% endif %}
+
+{% endblock %}
