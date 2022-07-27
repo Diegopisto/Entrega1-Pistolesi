@@ -4,13 +4,13 @@
 
 {% block contenidoquecambia %}
 
-    <h1>Actividades</h1>
+<h1 style="color:darkblue">Actividades</h1>
 
     <form action="{% url 'actividades' %}" method="POST">{% csrf_token %}
 
-        <p>Actividad: <input type="text" name="actividad"></p>
+        <p style="color: grey">Actividad: <input type="text" name="actividad" placeholder="Inicialice con mayúscula"></p>
 
-         <p>Turno mañana o tarde: <input type="text" name="turno"></p>
+        <p style="color: grey">Turno mañana o tarde: <input type="text" name="turno" placeholder="Inicialice con mayúscula"></p>
 
         <input type="submit" value="Registrar">
 

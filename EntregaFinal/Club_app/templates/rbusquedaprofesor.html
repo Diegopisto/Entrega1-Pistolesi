@@ -4,13 +4,13 @@
 
 {% block contenidoquecambia %}
 
-<p>Busqueda de profesores que dictan clases de: {{actividad}}</p>
+<p style="color:darkblue"><strong>Busqueda de profesores que dictan clases de: {{actividad}}</strong></p>
 
 {% if profesores %}
     <ul>
         {% for X in profesores %}
             <li>
-                {{X.nombre}}-{{X.actividad}}-{{X.turno}}
+                Profesor {{X.nombre}} - Turno {{X.turno}}
             </li>
         {% endfor %}
 

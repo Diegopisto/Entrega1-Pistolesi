@@ -1,13 +1,13 @@
 from django.urls import path
 
-from Club_app.views import actividades, alumnos, buscandoprofe, busquedaprofesor, inicio, listadoactividades, profesores 
+from Club_app.views import actividades, alumnos, buscando_profe, inicio, profesores, busqueda_profesor, listado_actividades
 
 urlpatterns = [
     path("", inicio),
-    path("profesores/", profesores, name="profesores"),
-    path("busquedaprofesor/", busquedaprofesor, name="busquedaprofesor"),
-    path("buscandoprofe/", buscandoprofe, name="buscandoprofe"),
-    path("actividades/", actividades, name="actividades"),
-    path("alumnos/", alumnos, name="alumnos"),
-    path("listaactividades/", listadoactividades, name="listaactividades"),
+    path("Club_app/profesores/", profesores, name="profesores"),
+    path("Club_app/busquedaprofesor/", busqueda_profesor, name="busquedaprofesor"),
+    path("Club_app/buscandoprofe/", buscando_profe, name="buscandoprofe"),
+    path("Club_app/actividades/", actividades, name="actividades"),
+    path("Club_app/alumnos/", alumnos, name="alumnos"),
+    path("Club_app/listaactividades/", listado_actividades, name="listaactividades"),
 ]

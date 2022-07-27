@@ -3,7 +3,7 @@ from urllib import request
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from Club_app.models import Actividades, Profesores
+from Club_app.models import Actividades, Alumnos, Profesores
 
 # Create your views here.
 
@@ -35,9 +35,23 @@ def actividades(request):
         return render(request,"cargaexitosa.html")
 
     return render(request,"actividades.html")
-    
 
-def listadoactividades(request):
+
+def alumnos(request):
+    
+    if request.method == "POST":
+
+        alumnos = Alumnos(nombre=request.POST["nombre"], edad=request.POST["edad"],actividad=request.POST["actividad"], turno=request.POST["turno"])
+        
+        alumnos.save()
+
+        return render(request,"cargaexitosa.html")
+
+    return render(request,"alumnos.html")
+
+
+
+def listado_actividades(request):
 
     lista = Actividades.objects.all()
 
@@ -50,19 +64,14 @@ def listadoactividades(request):
     return HttpResponse(documento)
 
 
-
-
-def alumnos(request):
-    return render(request,"alumnos.html")
-
 ### BUSQUEDA de profesores que dictan clases de: / LA BUSQUEDA EN LA COLUMANA ACTIVIDAD
 
-def busquedaprofesor(request):
+def busqueda_profesor(request):
 
     return render(request,"busquedaprofesor.html")
 
 # BUSCANDOPROFE SE RENDERIZA EN RBUSQUEDAPROFESOR
-def buscandoprofe(request):
+def buscando_profe(request):
 
     if request.GET["actividad"]:
 

@@ -4,15 +4,15 @@
 
 {% block contenidoquecambia %}
 
-    <h1>Profesores</h1>
+    <h1 style="color:darkblue">Profesores</h1>
 
     <form action="{% url 'profesores' %}" method="POST">{% csrf_token %}
 
-        <p>Nombre: <input type="text" name="nombre"></p>
+        <p style="color: grey">Nombre: <input type="text" name="nombre" placeholder="Inicialice con mayúscula"></p>
 
-        <p>Actividad: <input type="text" name="actividad"></p>
+        <p style="color: grey">Actividad: <input type="text" name="actividad" placeholder="Inicialice con mayúscula"></p>
 
-         <p>Turno: <input type="text" name="turno"></p>
+         <p style="color: grey">Turno: <input type="text" name="turno" placeholder="Inicialice con mayúscula"></p>
 
         <input type="submit" value="Registrar">
 

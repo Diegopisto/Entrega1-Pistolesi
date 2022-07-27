@@ -14,6 +14,7 @@ class Alumnos(models.Model):
     class Meta():
         ordering = ("nombre", "edad", "actividad", "turno")
 
+        
 class Profesores(models.Model):
 
     nombre=models.CharField(max_length=40)
@@ -36,4 +37,6 @@ class Actividades(models.Model):
 
     class Meta():
         ordering = ("actividad", "turno")
-    
+#unique evita que se repitan registros
+        unique_together = ("actividad", "turno")
+
