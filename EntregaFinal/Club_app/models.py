@@ -31,6 +31,7 @@ class Actividades(models.Model):
 
     actividad=models.CharField(max_length=40)
     turno=models.CharField(max_length=40)
+    profesores=models.ForeignKey(Profesores, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return f"{self.actividad} - {self.turno}"
